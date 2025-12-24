@@ -1,0 +1,635 @@
+/* Language Page Styles */
+
+.language-page {
+    min-height: 100vh;
+    padding: 0;
+}
+
+.lang-page-header {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(34, 211, 238, 0.1) 100%);
+    padding: 2rem 3rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.lang-page-header .back-btn {
+    background: rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lang-page-header .back-btn:hover {
+    background: rgba(99, 102, 241, 0.3);
+    transform: translateX(-3px);
+}
+
+.lang-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.lang-title .lang-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.lang-title h1 {
+    font-size: 1.75rem;
+    color: #fff;
+    margin: 0;
+}
+
+.lang-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.lang-stat {
+    text-align: center;
+}
+
+.lang-stat .stat-num {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #22d3ee;
+}
+
+.lang-stat .stat-text {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* Content Layout */
+.lang-content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: calc(100vh - 120px);
+}
+
+/* Sidebar */
+.lang-sidebar {
+    background: rgba(20, 20, 35, 0.8);
+    padding: 1.5rem;
+    border-right: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.filter-section {
+    margin-bottom: 1.5rem;
+}
+
+.filter-section h3 {
+    color: #fff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #94a3b8;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.filter-option:hover {
+    color: #fff;
+}
+
+.filter-option input[type="checkbox"] {
+    accent-color: #6366f1;
+    width: 16px;
+    height: 16px;
+}
+
+.filter-option .diff-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.filter-option.easy .diff-dot {
+    background: #22c55e;
+}
+
+.filter-option.medium .diff-dot {
+    background: #f59e0b;
+}
+
+.filter-option.hard .diff-dot {
+    background: #ef4444;
+}
+
+/* Problems Container */
+.problems-container {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Topic Section */
+.topic-section {
+    margin-bottom: 2rem;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.topic-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.topic-icon {
+    font-size: 1.5rem;
+}
+
+.topic-header h2 {
+    font-size: 1.25rem;
+    color: #fff;
+    flex: 1;
+}
+
+.difficulty-counts {
+    display: flex;
+    gap: 1rem;
+}
+
+.difficulty-counts .count {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.difficulty-counts .count.easy {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.difficulty-counts .count.medium {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+.difficulty-counts .count.hard {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.coming-soon {
+    padding: 2rem;
+    text-align: center;
+    color: #94a3b8;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+    border: 1px dashed rgba(99, 102, 241, 0.3);
+}
+
+/* Problem Table */
+.problem-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.problem-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(30, 30, 50, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.problem-row:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(40, 40, 60, 0.8);
+    transform: translateX(5px);
+}
+
+.problem-row.solved {
+    border-left: 3px solid #22c55e;
+}
+
+.problem-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.problem-info h3 {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 250px;
+}
+
+.problem-info .category {
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.problem-info .difficulty {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.problem-info .difficulty.easy {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.problem-info .difficulty.medium {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+.problem-info .difficulty.hard {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.problem-info .points {
+    color: #f59e0b;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.problem-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.solved-badge {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.solve-btn {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    padding: 0.6rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.solve-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+}
+
+.problem-row.solved .solve-btn {
+    background: rgba(99, 102, 241, 0.2);
+    color: #6366f1;
+}
+
+/* All Problems Section */
+.all-problems {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Difficulty Sections */
+.difficulty-section {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid;
+}
+
+.section-title.easy {
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.section-title.medium {
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.section-title.hard {
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.section-title .title-icon {
+    font-size: 1.25rem;
+}
+
+.section-title .count {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+/* Problems Grid - Fixed Alignment */
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+.section-title.topic {
+    color: #22d3ee;
+}
+
+.section-title.topic::after {
+    background: linear-gradient(90deg, #22d3ee, transparent);
+}
+
+.solved-indicator {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+/* Problem Cards */
+.problem-card {
+    background: rgba(30, 30, 50, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 12px;
+    padding: 1.25rem;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    animation: fadeInUp 0.4s ease forwards;
+    min-height: 260px;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.problem-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.problem-card.solved {
+    border-left: 3px solid #22c55e;
+}
+
+.problem-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.difficulty-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 16px;
+}
+
+.badge-easy {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.badge-medium {
+    background: rgba(245, 158, 11, 0.2);
+    color: #f59e0b;
+}
+
+.badge-hard {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.problem-title {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    min-height: 2.8em;
+}
+
+.problem-category {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin-bottom: auto;
+}
+
+.category-icon {
+    font-size: 0.85rem;
+}
+
+.problem-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(99, 102, 241, 0.15);
+    flex-shrink: 0;
+}
+
+.points-display {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.points-icon {
+    font-size: 0.9rem;
+}
+
+.points-value {
+    color: #f59e0b;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.points-label {
+    color: #94a3b8;
+    font-size: 0.7rem;
+}
+
+.problem-card .solve-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.problem-card .solve-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.problem-card .solve-btn .arrow {
+    transition: transform 0.2s;
+}
+
+.problem-card .solve-btn:hover .arrow {
+    transform: translateX(3px);
+}
+
+.beginner-friendly-tag {
+    margin-top: 0;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(34, 197, 94, 0.05));
+    border-radius: 0 0 12px 12px;
+    border-top: 1px solid rgba(34, 197, 94, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #22c55e;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    flex-shrink: 0;
+}
+
+/* No Problems */
+.no-problems {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #94a3b8;
+}
+
+.no-problems-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.no-problems p {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.no-problems-hint {
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .lang-content {
+        grid-template-columns: 1fr;
+    }
+
+    .lang-sidebar {
+        display: none;
+    }
+
+    .problems-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .lang-page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .lang-stats {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .problems-grid {
+        grid-template-columns: 1fr;
+    }
+}
