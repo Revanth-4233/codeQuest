@@ -10,6 +10,7 @@ import BadgesPanel from './components/BadgesPanel';
 import Leaderboard from './components/Leaderboard';
 import LanguagePage from './components/LanguagePage';
 import ProfilePage from './components/ProfilePage';
+import SettingsPage from './components/SettingsPage';
 import AdminPage from './components/AdminPage';
 import dataService from './services/DataService';
 import './App.css';
@@ -47,6 +48,27 @@ function AppContent() {
       setCurrentPage('admin');
     }
   }, [isAuthenticated, isAdmin]);
+
+  // Initialize theme from saved settings on app load
+  useEffect(() => {
+    const savedSettings = localStorage.getItem('codequest-settings');
+    if (savedSettings) {
+      try {
+        const settings = JSON.parse(savedSettings);
+        let theme = settings.theme || 'dark';
+
+        if (theme === 'system') {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          theme = prefersDark ? 'dark' : 'light';
+        }
+
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        // Default to dark theme if parsing fails
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    }
+  }, []);
 
   // Load user progress when authenticated
   useEffect(() => {
@@ -317,6 +339,14 @@ function AppContent() {
             user={{ ...user, email: currentUser?.email }}
             solvedProblems={solvedProblems}
             earnedBadges={earnedBadges}
+            onBack={() => handleNavigate('dashboard')}
+          />
+        );
+
+      case 'settings':
+        return (
+          <SettingsPage
+            user={{ ...user, email: currentUser?.email }}
             onBack={() => handleNavigate('dashboard')}
           />
         );
